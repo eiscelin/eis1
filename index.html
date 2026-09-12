@@ -26,13 +26,36 @@
       align-items: center;
       justify-content: center;
     }
+    .hero-layout {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      width: min(920px, 92vw);
+    }
+    .hero-image {
+      flex: 1;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,.4);
+      aspect-ratio: 3 / 4;
+    }
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
     .timer-card {
+      flex: 1;
       background: var(--card);
       border-radius: 24px;
       padding: 48px 40px;
       text-align: center;
       box-shadow: 0 20px 60px rgba(0,0,0,.4);
-      width: min(440px, 92vw);
+    }
+    @media (max-width: 720px) {
+      .hero-layout { flex-direction: column; gap: 24px; }
+      .hero-image { width: min(360px, 80vw); }
     }
     h1 {
       font-size: 22px;
@@ -103,7 +126,11 @@
   </style>
 </head>
 <body>
-  <div class="timer-card">
+  <div class="hero-layout">
+    <div class="hero-image">
+      <img src="https://media.base44.com/images/public/6a9d422f7e94457755a4cb32/c8455af78_f11eb9fb-d3df-457f-af01-d87b1317a260.jpg" alt="Countdown Timer" />
+    </div>
+    <div class="timer-card">
     <h1>Countdown Timer</h1>
     <div class="display" id="display">00:00:00</div>
     <div class="inputs" id="inputs">
@@ -124,6 +151,7 @@
       <button class="btn btn-primary" id="startBtn">Start</button>
       <button class="btn btn-secondary" id="resetBtn" disabled>Reset</button>
     </div>
+  </div>
   </div>
   <script>
     (function() {
