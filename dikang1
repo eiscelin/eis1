@@ -182,6 +182,7 @@
           <a href="#features">Features</a>
           <a href="#workflow">How It Works</a>
           <a href="#production">Production</a>
+          <a href="/timer.html">Timer</a>
         </div>
         <div class="nav-actions">
           <a class="btn btn-outline" href="#login">Log In</a>
